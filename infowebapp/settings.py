@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
     'infocascade-18.onrender.com',
     'localhost',
     '127.0.0.1'
+    'infocascade-20.onrender.com',
 ]
 
 
