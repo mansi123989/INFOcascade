@@ -1,0 +1,381 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block style %}
+:root {
+    --primary-brown: #8B7355;
+    --dark-brown: #654321;
+    --light-brown: #A68A6D;
+    --cream: #F5F5DC;
+    --gray-dark: #333333;
+    --gray-medium: #666666;
+    --gray-light: #E5E5E5;
+    --gray-bg: #f8f9fa;
+    --shadow: 0 4px 15px rgba(139, 115, 85, 0.1);
+    --shadow-hover: 0 8px 25px rgba(139, 115, 85, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--gray-bg) 0%, var(--gray-light) 100%);
+    min-height: 100vh;
+    padding: 20px;
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    text-align: center;
+    color: var(--dark-brown);
+    font-size: 2.5rem;
+    margin: 30px 0 40px 0;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.notices-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.notice {
+    background: white;
+    border: 1px solid var(--gray-light);
+    border-left: 5px solid var(--primary-brown);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Stagger animation for multiple notices */
+.notice:nth-child(1) { animation-delay: 0.1s; }
+.notice:nth-child(2) { animation-delay: 0.2s; }
+.notice:nth-child(3) { animation-delay: 0.3s; }
+.notice:nth-child(4) { animation-delay: 0.4s; }
+.notice:nth-child(5) { animation-delay: 0.5s; }
+.notice:nth-child(n+6) { animation-delay: 0.6s; }
+
+.notice:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    border-left-color: var(--dark-brown);
+}
+
+.notice p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: var(--gray-dark);
+    font-size: 1.05rem;
+}
+
+.notice p:last-child {
+    margin-bottom: 0;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: var(--gray-medium) !important;
+    font-style: italic;
+    border-top: 1px solid var(--gray-light);
+    padding-top: 15px;
+    margin-top: 20px !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.date::before {
+    content: '📅';
+    font-size: 0.8rem;
+}
+
+.attachment {
+    background: linear-gradient(135deg, var(--cream), #f0e6d2);
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--light-brown);
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.attachment:hover {
+    background: linear-gradient(135deg, #f0e6d2, var(--cream));
+    transform: translateX(5px);
+}
+
+.attachment a {
+    color: var(--dark-brown);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.attachment a::before {
+    content: '📎';
+    font-size: 1rem;
+}
+
+.attachment a:hover {
+    color: var(--primary-brown);
+    text-decoration: underline;
+}
+
+.no-notices {
+    text-align: center;
+    color: var(--gray-medium);
+    font-size: 1.2rem;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    animation: fadeIn 1s ease-in;
+}
+
+.no-notices::before {
+    content: '📋';
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+/* Loading animation skeleton */
+.notice.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-left: 5px solid var(--gray-light);
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin: 20px 0 30px 0;
+    }
+    
+    .notices-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    .notice {
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+    }
+    
+    .notice p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin: 15px 0 25px 0;
+    }
+    
+    .notices-container {
+        padding: 10px;
+    }
+    
+    .notice {
+        padding: 18px;
+        margin-bottom: 18px;
+        border-radius: 10px;
+    }
+    
+    .attachment {
+        padding: 10px 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .date {
+        font-size: 0.85rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .notice {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .attachment a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #000;
+    }
+}
+
+/* Enhanced focus for accessibility */
+.notice:focus-within {
+    outline: 2px solid var(--primary-brown);
+    outline-offset: 2px;
+}
+
+.attachment a:focus {
+    outline: 2px solid var(--dark-brown);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+.background-container {
+    background-image: 
+      url("{% static 'back9.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    margin-top: 160px; 
+    border-radius: 20px;
+    margin-right:20px;
+    margin-left: 20px;
+    padding: 30px; 
+    min-height: calc(100vh - 100px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+{% endblock style %}
+
+{% block body %}
+<div class="background-container">
+<div class="notices-container">
+    <h1>All Notices</h1>
+
+    {% if notice %}
+        {% for n in notice %}
+            <div class="notice" tabindex="0">
+                <p>{{ n.text|linebreaksbr }}</p>
+                
+                {% if n.file %}
+                    <div class="attachment">
+                        <a href="{{ n.file.url }}" target="_blank" rel="noopener">
+                            {{ n.file.name|cut:"uploads/" }}
+                        </a>
+                    </div>
+                {% endif %}
+                
+                <p class="date">Posted on: {{ n.created_at|date:"F j, Y \\a\\t g:i A" }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="no-notices">
+            <p>No notices available at the moment.</p>
+            <p style="font-size: 1rem; margin-top: 10px; opacity: 0.8;">Check back later for updates.</p>
+        </div>
+    {% endif %}
+</div>
+</div>
+{% endblock body %}
+
+{% block script %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add intersection observer for scroll animations
+    const notices = document.querySelectorAll('.notice');
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Initialize notices with hidden state
+    notices.forEach(notice => {
+        notice.style.opacity = '0';
+        notice.style.transform = 'translateY(30px)';
+        notice.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(notice);
+    });
+    
+    // Add click animation to notices
+    notices.forEach(notice => {
+        notice.addEventListener('click', function() {
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+    });
+    
+    // File download tracking
+    const fileLinks = document.querySelectorAll('.attachment a');
+    fileLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // You can add analytics tracking here
+            console.log('File downloaded:', this.href);
+        });
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            // Blur any focused notice
+            document.activeElement.blur();
+        }
+    });
+});
+</script>
+{% endblock script %}
