@@ -29,7 +29,7 @@ import os
 
 ALLOWED_HOSTS = [
     'infocascade.onrender.com',
-    'infocascade-17.onrender.com',
+    'infocascade-19.onrender.com',
     'infocascade-18.onrender.com',
     'localhost',
     '127.0.0.1'
