@@ -1,89 +1,99 @@
-# -------------------
-# Core Framework
-# -------------------
-Django==5.2
-asgiref==3.8.1
-sqlparse==0.5.3
-tzdata==2025.2
-
-# -------------------
-# Async + Channels (WebSocket)
-# -------------------
-channels==4.2.2
-channels_redis==4.2.1
-redis==5.2.1
-
-# -------------------
-# HTTP / Auth / Utilities
-# -------------------
-requests==2.32.4
-google-auth==2.41.1
-PyJWT==2.10.1
-twilio==9.8.4
-pyfcm==2.1.0
-
-# -------------------
-# Data / ML / Stats (Safe Versions)
-# -------------------
-numpy==2.3.2
-pandas==2.3.1
-scipy==1.16.1
-seaborn==0.13.2
-matplotlib==3.10.3
-pillow==11.3.0
-phik==0.12.5
-ImageHash==4.3.2
-
-# -------------------
-# Streamlit (if used for dashboard)
-# -------------------
-streamlit==1.47.1
-streamlit-pandas-profiling==0.1.3
-
-# -------------------
-# Profiling / Reports / Visualization
-# -------------------
-pandas-profiling==3.2.0
-pdfkit==1.0.0
-
-# -------------------
-# Validators / Typing
-# -------------------
-pydantic==2.11.7
-pydantic_core==2.33.2
-typing_extensions==4.14.1
-
-# -------------------
-# OCR (if needed)
-# -------------------
-pytesseract==0.3.13
-
-# -------------------
-# Utilities / Helpers
-# -------------------
-altair==5.5.0
-jinja2==3.1.6
-markupsafe==2.1.5
-protobuf==6.31.1
-packaging==25.0
-python-dateutil==2.9.0.post0
-six==1.17.0
-urllib3==2.5.0
-certifi==2025.7.14
-charset-normalizer==3.4.2
+aiohappyeyeballs==2.6.1
 aiohttp==3.13.1
 aiohttp-retry==2.9.1
-aiohappyeyeballs==2.6.1
-yarl==1.22.0
-frozenlist==1.8.0
-multidict==6.7.0
+aiosignal==1.4.0
+altair==5.5.0
+annotated-types==0.7.0
+asgiref==3.8.1
 attrs==25.3.0
-
-# -------------------
-# Platform and Virtualenv Tools
-# -------------------
-filelock==3.18.0
-platformdirs==4.3.7
-virtualenv==20.30.0
+blinker==1.9.0
+cachetools==6.1.0
+certifi==2025.7.14
+channels==4.2.2
+channels_redis==4.2.1
+charset-normalizer==3.4.2
+click==8.2.1
+colorama==0.4.6
+comtypes==1.4.13
+contourpy==1.3.3
+cycler==0.12.1
 distlib==0.3.9
+Django==5.2
+env==0.1.0
+filelock==3.18.0
+fonttools==4.59.0
+frozenlist==1.8.0
+gitdb==4.0.12
+GitPython==3.1.45
+google-auth==2.41.1
+htmlmin==0.1.12
+idna==3.10
+ImageHash==4.3.2
+Jinja2==3.1.6
+joblib==1.1.1
+jsonschema==4.25.0
+jsonschema-specifications==2025.4.1
+kiwisolver==1.4.8
+MarkupSafe==2.1.5
+matplotlib==3.10.3
+missingno==0.5.2
+msgpack==1.1.0
+mss==10.1.0
+multidict==6.7.0
+multimethod==2.0
+narwhals==2.0.1
+networkx==3.5
+numpy==2.3.2
+packaging==25.0
+pandas==2.3.1
+pandas-profiling==3.2.0
+pdfkit==1.0.0
+phik==0.12.5
+pillow==11.3.0
+platformdirs==4.3.7
+propcache==0.4.1
+protobuf==6.31.1
+pyarrow==21.0.0
+pyasn1==0.6.1
+pyasn1_modules==0.4.2
+pydantic==2.11.7
+pydantic_core==2.33.2
+pydeck==0.9.1
+pyfcm==2.1.0
+PyJWT==2.10.1
+pyparsing==3.2.3
+pypiwin32==223
+pytesseract==0.3.13
+python-dateutil==2.9.0.post0
+pyttsx3==2.99
+pytz==2025.2
+PyWavelets==1.8.0
+pywin32==311
+PyYAML==6.0.2
+redis==5.2.1
+referencing==0.36.2
+requests==2.32.4
+rpds-py==0.26.0
+rsa==4.9.1
+scipy==1.16.1
+seaborn==0.13.2
+six==1.17.0
+smmap==5.0.2
+sqlparse==0.5.3
+streamlit==1.47.1
+streamlit-pandas-profiling==0.1.3
+tangled-up-in-unicode==0.2.0
+tenacity==9.1.2
+toml==0.10.2
+tornado==6.5.1
+tqdm==4.67.1
+twilio==9.8.4
+typing-inspection==0.4.1
+typing_extensions==4.14.1
+tzdata==2025.2
+urllib3==2.5.0
+virtualenv==20.30.0
+visions==0.7.4
+watchdog==6.0.0
+yarl==1.22.0
 
