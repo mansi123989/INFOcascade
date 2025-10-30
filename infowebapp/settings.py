@@ -27,7 +27,13 @@ DEBUG = True
 
 import os
 
-ALLOWED_HOSTS = ['infocascade.onrender.com', 'localhost', '127.0.0.1',https://infocascade-17.onrender.com/,https://infocascade-18,'infocascade-17.onrender.com',infocascade-17.onrender.com]
+ALLOWED_HOSTS = [
+    'infocascade.onrender.com',
+    'infocascade-17.onrender.com',
+    'infocascade-18.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 
 
