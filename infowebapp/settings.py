@@ -36,6 +36,9 @@ ALLOWED_HOSTS = [
     'infocascade-20.onrender.com',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://infocascade-19.onrender.com',
+]
 
 
 # Application definition
